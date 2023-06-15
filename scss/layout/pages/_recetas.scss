@@ -1,0 +1,41 @@
+main.recetas {
+    section {
+        @include flex(column, nowrap, center, center);
+        gap: 2rem;
+        margin-bottom: 2rem;
+
+        div {
+            @include flex(column, nowrap, center, center);
+            gap: 2rem;
+            width: 90%;
+            div{
+                img{
+                    width:75%;
+                    height:auto;
+                }
+            }
+            div {
+
+                ul {
+                    text-align: justify;
+
+                    li {
+                        list-style-type: disc;
+
+                        span {
+                            font-size: 1.8rem;
+                            font-weight: 600;
+                        }
+
+                        p {
+                            text-align: justify;
+                            line-height: 3rem;
+                        }
+                    }
+                }
+
+            }
+
+        }
+    }
+}

@@ -1,0 +1,61 @@
+/**^MEDIA-QUERIE-2560**/
+main.contacto {
+    @media (min-width:2560px) {
+        section {
+            margin-bottom: 5rem;
+
+            div.contacto-wrapper {
+                div.contacto-form {
+                    width: 100%;
+
+                    form {
+                        width: 100%;
+
+                        fieldset {
+
+                            div.contenedor-inputs {
+                                @include grid(repeat(3, 1fr), repeat(2, 1fr), space-around, center, center, none);
+                                div.input.nombre{
+                                    padding-left:5rem;
+                                }
+                                div.input.celular{
+                                    padding-right:5rem;
+                                }
+
+                                div.input.mensaje {
+                                    grid-column:1 / 4;
+                                    width: 50%;
+                                    margin-bottom: 2rem;
+                                    text-align: center;
+
+                                }
+                            }
+
+
+
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+/**#Footer**/
+footer {
+    section {
+        @media(min-width:2560px) {
+                div.siguenos{
+                    padding-left:11rem;
+                    padding-right:0;
+                }
+                div.iconos-redes{
+                    padding-right:23rem;
+                
+                
+            }
+        }
+    }
+}

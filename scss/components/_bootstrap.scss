@@ -1,0 +1,43 @@
+/**^BOOTSTRAP-NAVBAR**/
+header {
+    background-color: $base;
+
+    nav {
+        div{
+            @include flex(row, nowrap, space-between, center !important);
+            a {
+                img {
+                    border-radius: 50%;
+                }
+
+                h1 {
+                    display: none;
+                    span{
+                        color:$granate;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            div {
+                ul {
+                    li {
+                        text-transform: uppercase;
+                        text-align: center;
+                        font-weight: bolder;
+                        color: $marron;
+                    }
+                }
+
+                ul {
+                    li {
+                        a:hover {
+                            text-shadow: 0px 6px 3px rgba(111, 23, 23, 0.6);
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+/**^HEADER**/
+/**Ver en boostrap.scss**/
+/**^Slogan**/
+div.contenedor-slogan {
+    @include flex(column, nowrap, center, center);
+    background-image: url(../assets/img/granos-cafe-2.png);
+    width: 100%;
+    height: 40vh;
+    div{
+        @include flex(column,nowrap,center,center);
+        h2 {
+            color: $blanco;
+            font-family: $fuente-principal;
+            font-weight: 900;
+            letter-spacing: 2px;
+            width: 70%;
+            text-align: center;
+        }
+    }
+    
+}
+
+/**^Sección blanca y negra**/
+div.contenedor-blanco-negro {
+    width: 100%;
+    gap:0;
+    div.negro {
+        background-color: $negro;
+        text-align: center;
+        margin-bottom: 0 !important;
+        width: 100%;
+
+        h3 {
+            color: $blanco;
+            font-family: $fuente-principal;
+            text-transform: uppercase;
+            padding: 3rem 0 3rem 0;
+            margin-bottom: 0 !important;
+        }
+    }
+    div.blanco {
+        background-color: $blanco;
+        text-align: center;
+        margin-bottom: 0 !important;
+        width: 100%;
+
+        h3 {
+            color: $negro;
+            font-family: $fuente-principal;
+            text-transform: uppercase;
+            padding: 3rem 0 3rem 0;
+            margin: 0 !important;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+/**^boton-carrito**/
+main {
+    section {
+        div {
+            div.variedades {
+                div {
+                    form {
+                        input.boton-agregar-carrito {
+                            @extend .boton-agregar-carrito;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+/**^boton-ver-productos**/
+main {
+    section {
+        div.contenedor-ver-productos {
+            a.boton-ver-productos {
+                @extend .boton-agregar-carrito;
+                margin: 3rem 0;
+            }
+        }
+    }
+}

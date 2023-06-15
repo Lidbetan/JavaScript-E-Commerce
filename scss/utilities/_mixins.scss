@@ -1,0 +1,49 @@
+@mixin flex ($direction,$wrap,$justify,$align){
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin grid ($col, $row, $justify, $justifyi, $align, $area){
+    display: grid;
+    grid-template-columns: $col;
+    grid-template-rows: $row;
+    justify-content: $justify;
+    justify-items: $justifyi;
+    align-items: $align;
+    grid-template-areas: $area;
+}
+
+@mixin font-h1-375{
+    font-size:2rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+@mixin font-h2-375{
+    font-size:1.6rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+@mixin font-h3-375{
+    font-size:1.2rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+@mixin font-h1-1024{
+    font-size:3rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+@mixin font-h2-1024{
+    font-size:2.4rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+@mixin font-h3-1024{
+    font-size:2rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+}

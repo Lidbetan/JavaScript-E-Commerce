@@ -1,0 +1,89 @@
+/**^MEDIA-QUERIE-1440**/
+main {
+    @media (min-width:1441px) {
+        section {
+            width: 75%;
+            margin: auto !important;
+            margin-top: 3rem !important;
+            margin-bottom: 3rem !important;
+        }
+    }
+
+}
+
+/**#Nosotros**/
+main.nosotros {
+    @media (min-width:1440px) {
+        section {
+            div.origenes {
+                @include grid(repeat(2, 1fr), repeat (3, 1fr), center, start, start, none);
+                gap:0;
+                h2 {
+                    grid-column: 2 / 3;
+                    grid-row: 1 / 2;
+                }
+
+                div.origenes-img {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 4;
+                }
+
+                div.origenes-p {
+                    grid-column: 2 / 3;
+                    grid-row: 2 / 4;
+                    p{
+                        margin-top:-7rem; 
+                    }
+                }
+            }
+
+            div.filosofia {
+                @include grid(repeat(2, 1fr), repeat(3, 1fr), center, end, start, none);
+                gap:0;
+
+                h2 {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+                }
+
+                div.filosofia-img {
+                    grid-column: 2 / 3;
+                    grid-row: 1 / 4;
+                }
+
+                div.filosofia-p {
+                    grid-column: 1 / 2;
+                    grid-row: 2 / 4;
+                    p{
+                        margin-top:-7rem; 
+                    }
+                    
+                }
+            }
+        }
+    }
+
+}
+main.recetas{
+    @media (min-width:1440px) {
+        section{
+            div{
+                div{
+                    img{
+                        width:60% !important;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**#Footer**/
+footer {
+    section {
+        @media(min-width:1440px) {
+            width: 75%;
+        }
+    }
+}

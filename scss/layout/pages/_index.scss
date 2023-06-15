@@ -1,0 +1,80 @@
+/**^MAIN-INDEX**/
+/**^contenedores-variedades**/
+main {
+    section {
+        @include flex(column,center,center,center);
+        h2{
+            font-family: $fuente-terciaria;
+            color:$granate;
+            font-size: 3rem;
+        }
+        div.contenedor-variedades {
+            @include flex(column, nowrap, center, center);
+            gap: 4rem;
+            width:95%;
+
+            div.variedades {
+                @include flex(column, nowrap, center, center);
+                width: 100%;
+                gap: 2rem;
+
+                div {
+                    @include flex(column, nowrap, center, center);
+                    gap: 1rem;
+                    width: 61%;
+                }
+            }
+        }
+    }
+}
+
+main {
+    section {
+        div {
+            a {
+                @include flex(column, nowrap, center, center);
+
+                img {
+                    border-radius: 10%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+main {
+    section {
+        div {
+            div.variedades {
+                div {
+                    p.nombre {
+                        text-align: center;
+                        font-family: $fuente-secundaria;
+                        font-size: 1.8rem;
+                        color: $marron;
+                        text-transform: uppercase;
+                        font-weight: bolder;
+                        text-shadow: 0px 1px, 1px 0px, 1px 1px;
+                    }
+                    p.info {
+                        text-align: center;
+                        font-family: $fuente-secundaria;
+                        font-size: 1.6rem;
+                        color: $marron;
+                        line-height: 2rem;
+                    }
+                    p.precio {
+                        text-align: center;
+                        font-weight: bolder;
+                        text-shadow: 0px 1px, 1px 0px, 1px 1px;
+                        font-family: $fuente-secundaria;
+                        font-size: 1.6rem;
+                        color: $marron;
+                }
+            }
+        }
+
+    }
+    }
+}

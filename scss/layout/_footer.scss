@@ -1,0 +1,43 @@
+/**^FOOTER**/
+footer {
+    width: 100%;
+
+    section {
+        background-color: $gris;
+        width:75%;
+        margin: auto;
+        @include flex(column,nowrap,center,center);
+        div {
+            
+            h2 {
+                font-family: $fuente-terciaria;
+                font-weight: bold;
+                color: $granate;
+                text-align: center;
+                margin: 0.5rem;
+            }
+            p{
+                font-family: $fuente-secundaria !important;
+                font-weight: 700;
+                text-align: center;
+                line-height: 2.5rem;
+            }
+        }
+        div.siguenos {
+            h2 {
+                font-family: $fuente-terciaria;
+                font-weight: bold;
+                color: $granate;
+                text-align: center;
+                margin: 0.5rem;
+            }
+            p{
+                font-family: $fuente-secundaria !important;
+                font-weight: 700;
+                text-align: center;
+                line-height: 2.5rem;
+            }
+            
+        }
+    }
+}

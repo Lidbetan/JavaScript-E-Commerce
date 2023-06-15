@@ -1,0 +1,85 @@
+/**^MAINCONTACTO**/
+main.contacto{
+    h2{
+        font-family: $fuente-terciaria;
+        color:$granate;
+        font-size: 3rem;
+    }
+    section{
+        @include flex(column,nowrap,center,center);
+        margin-bottom:4rem;
+        div.contacto-wrapper {
+            @include flex(column,nowrap,center,center);
+            width:95%;
+            gap:2rem;
+            div.contacto-info{
+                text-align:center;
+                p{
+                    font-weight: bold;
+                    span{
+                        color:$granate;
+                    }
+                }
+            }
+            div.iframe{
+                iframe{
+                    width:100%;
+                }
+            
+            }
+            div.contacto-form {
+                
+                form {
+                    background-color: $base;
+                    color: $marron;
+                    width: min(41rem, 100%);
+                    margin: 0 auto;
+                    border-radius: 1rem;
+                    fieldset{
+                        padding:2rem;
+                        legend{
+                            text-align: center;
+                            font-size: 2rem;
+                            font-weight: bold;
+                            margin-bottom: 2rem;
+                        }
+                        div.contenedor-inputs{
+                            @include flex(column,nowrap,center,center);
+                            gap:2rem;
+                            div.input{
+                                label{
+                                    display: block;
+                                    font-weight: 600;
+                                    margin-bottom: 0.5rem;
+                                }
+                                input{
+                                    border:none;
+                                    padding:0.8rem;
+                                    border-radius: .5rem;
+                                }
+                            }
+                            div.input.mensaje{
+                                width: 100%;
+                                textarea{
+                                    border:none;
+                                    margin-top: -2rem;
+                                    padding:0.8rem;
+                                }
+                                
+                            }
+                        }
+                        div.input.submit{
+                            text-align: center;
+                            input{
+                                @extend.boton-agregar-carrito;
+                            }
+                        }
+                        
+                    
+                    }
+                }
+            }
+        }
+
+    }
+}
