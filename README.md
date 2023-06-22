@@ -1,6 +1,6 @@
 # Locosxelcafé - CoffeStore
-## Proyecto Curso de Desarrollo Web - CoderHouse
-### Comisión 39385
+## Proyecto JavaScript - CoderHouse
+### Comisión 43140
 
 En este proyecto se desarrolla un sitio web de índole comercial, específicamente de venta de café de especialidad y artículos varios de barista. 
 
@@ -11,6 +11,7 @@ En este proyecto se desarrolla un sitio web de índole comercial, específicamen
 - CSS
 - SASS
 - BOOTSTRAP
+- JAVASCRIPT
 - GIT
 - GITHUB
 
@@ -33,9 +34,9 @@ Para el *Header* se creó un menú hamburguesa responsive, mediante la utilizaci
 
 El *Footer*  cuenta con enlaces que redirigen a las redes sociales (Facebook e Instagram).
 
-Con respecto a los archivos de imágenes empleadas son todas en formato .png y comprimidas, en pos de optimizar el peso del código y sus tiempos de carga. 
+ Con respecto a los archivos de imágenes empleadas son todas en formato .png y comprimidas, a fin de optimizar el peso del código y sus tiempos de carga. 
 
-
+Actualmente se está comenzando a implementar JavaScript para crer un carrito de compras.
 
 
 
