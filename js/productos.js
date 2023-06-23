@@ -4,7 +4,8 @@ function validarCompra(realizar_compra) {
     } else {
         return false;
     }
-}
+}/*Esta function sirve para validar la compra, toma como parámetro la variable realizar_compra, la cual se define con un prompt.
+    En caso de que el usuario ingrese "SI" o "NO", retorna true, por el contrario, retorna false*/ 
 
 let realizar_compra = "";
 realizar_compra = prompt("Va a realizar alguna compra, por favor responda SI o NO");
@@ -17,7 +18,7 @@ while (!validacion) {
 } /*Cuando NO ingreso "SI" o "NO", validación es false, entonces lo niego con el operador NOT
 y me pide nuevamente que ingrese una respuesta válida*/
 
-if (validacion) {
+if (validacion) { /*La variable validación depende de la funcion validar_compra, cuando esta arroja true, se ejecuta el código siguiente*/ 
 
     if (realizar_compra == "SI") {
         let articulo = "";
@@ -25,7 +26,7 @@ if (validacion) {
         let total_compra = 0;
 
         while (articulo != "ESC") {
-            articulo = prompt("Ingrese el código del artículo y ESC para finalizar");
+            articulo = prompt("Ingrese el código del artículo y/o ESC para finalizar");
             if (articulo === "ESC") {
                 alert("Artículos comprados: " + "\n" + lista_articulos + " " + "El total de su compra es de: " + "\n" + "$" + total_compra + " Gracias por su compra");
                 break;
@@ -60,7 +61,7 @@ if (validacion) {
                 }
             }
         }
-    } else if (realizar_compra == "NO") {
+    } else if (realizar_compra == "NO") {//Si la respuesta ingresada por el usuario inicialmente fuera "NO", arroja el siguiente mensaje.
         alert("Que tenga buen día");
     }
 
