@@ -25,7 +25,7 @@ if (validacion) {
         let total_compra = 0;
 
         while (articulo != "ESC") {
-            articulo = prompt("Ingrese el código del artículo");
+            articulo = prompt("Ingrese el código del artículo y ESC para finalizar");
             if (articulo === "ESC") {
                 alert("Artículos comprados: " + "\n" + lista_articulos + " " + "El total de su compra es de: " + "\n" + "$" + total_compra + " Gracias por su compra");
                 break;
