@@ -12,11 +12,10 @@ realizar_compra = prompt("Va a realizar alguna compra, por favor responda SI o N
 
 let validacion = validarCompra(realizar_compra);
 
-while (!validacion) {
+while (validacion != true) {
     realizar_compra = prompt("Respuesta inválida. Por favor, ingrese SI o NO");
     validacion = validarCompra(realizar_compra);
-} /*Cuando NO ingreso "SI" o "NO", validación es false, entonces lo niego con el operador NOT
-y me pide nuevamente que ingrese una respuesta válida*/
+} /*Cuando NO ingreso "SI" o "NO", validación es false, en dicho caso me vuelve a pedir que ingrese una respuesta válida*/
 
 if (validacion) { /*La variable validación depende de la funcion validar_compra, cuando esta arroja true, se ejecuta el código siguiente*/ 
 
