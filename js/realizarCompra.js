@@ -1,16 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    function validarCompra(realizar_compra) {
-        if (realizar_compra == "SI" || realizar_compra == "NO") {
-            return true;
-        } else {
-            return false;
-        }
-    }/*Esta function sirve para validar la compra, toma como parámetro la variable realizar_compra, la cual se define con un prompt.
-    En caso de que el usuario ingrese "SI" o "NO", retorna true, por el contrario, retorna false*/
-
     let realizar_compra = "";
-    realizar_compra = prompt("Va a realizar alguna compra, por favor responda SI o NO");
+    realizar_compra = prompt("Va a realizar alguna compra, por favor responda SI o NO").toLocaleUpperCase();
 
     let validacion = validarCompra(realizar_compra);
 
@@ -23,65 +14,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (realizar_compra == "SI") {
             let articulo = "";
-            let lista_articulos = "";
+            let carrito = "";
             let total_compra = 0;
 
             while (articulo != "ESC") {
-                articulo = prompt("Ingrese el código del artículo y/o ESC para finalizar");
+                articulo = prompt("Ingrese el código del artículo y/o ESC para finalizar").toLocaleUpperCase();
+
                 if (articulo === "ESC") {
-                    alert("Artículos comprados: " + "\n" + lista_articulos + " " + "El total de su compra es de: " + "\n" + "$" + total_compra + " Gracias por su compra");
-                    break;
+                    alert("Artículos comprados:\n" + carrito + "\nEl total de su compra es de:\n$" + total_compra + "\nGracias por su compra");
+                    break;/*Reemplacé switch por el siguiente código. De esta forma declaro una nueva variable productoDisponible
+                           que tiene como valor una función/método find, que retorna el id del producto y lo compara con el input
+                           ingresado por el usuario, por lo que TIENE QUE SER CONVERTIDO EN NUM mediante parseInt */ 
                 } else {
-                    switch (articulo) {
-                        case "1":
-                            lista_articulos += "Cafe Italiano - $2400" + "\n";
-                            total_compra += 2400;
-                            break;
-                        case "2":
-                            lista_articulos += "Cafe Brasil - $2400" + "\n";
-                            total_compra += 2400;
-                            break;
-                        case "3":
-                            lista_articulos += "Cafe Colombia - $2400" + "\n";
-                            total_compra += 2400;
-                            break;
-                        case "4":
-                            lista_articulos += "Cafetera Filtro - $6500" + "\n";
-                            total_compra += 2400;
-                            break;
-                        case "5":
-                            lista_articulos += "Cafetera Italiana - $9700" + "\n";
-                            total_compra += 2400;
-                            break;
-                        case "6":
-                            lista_articulos += "Jarra Pitcher - $8600" + "\n";
-                            total_compra += 2400;
-                            break;
-                        default:
-                            alert("Ingrese el codigo correcto");
+
+                    let productoDisponible = arrayProductos.find(function(producto) {
+                        return producto.getId() === parseInt(articulo);
+                    });
+                    if (productoDisponible && productoDisponible.getStock() > 0) {//Si el input coincide con un producto con stock > 0
+                        carrito += productoDisponible.descripcionProducto() + "\n";//obtenido mediante la función getStock(), suma el
+                        total_compra += productoDisponible.getPrecio();            //artículo al carrito.
+                    } else {
+                        alert("Este producto no se encuentra disponible");
+                        }  
                     }
                 }
-            }
-        } else if (realizar_compra == "NO") {//Si la respuesta ingresada por el usuario inicialmente fuera "NO", arroja el siguiente mensaje.
-            alert("Que tenga buen día");
+            } else if (realizar_compra == "NO") {//Si la respuesta ingresada por el usuario inicialmente fuera "NO", arroja el siguiente mensaje.
+                alert("Que tenga buen día");
+                }
         }
 
     }
-});
+);
 
-
-
-
-
-
-/*function mostrarResultado(lista_articulos, total_compra) {
-
-    alert("Artículos comprados: " + "\n" + lista_articulos + " " + "El total de su compra es de: " + "\n" + "$" + total_compra + " Gracias por su compra");
-
-}*/
-
-
-//Función de validación de la compra c/sus variables.
 
 
 
