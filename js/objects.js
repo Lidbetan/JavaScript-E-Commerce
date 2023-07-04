@@ -22,6 +22,9 @@ class StockProductos {//Clase constructora de objetos de la lista de productos d
     getId() {
         return this.id;
     }
+    setId(nuevo_id) {
+        this.id = nuevo_id;
+    }
     getNombre() {
         return this.nombre;
     }
@@ -39,13 +42,13 @@ class StockProductos {//Clase constructora de objetos de la lista de productos d
     }
 }
 //Lista de productos disponibles, hecha a partir de la clase constructora.
-let arrayProductos = new Array();
-arrayProductos.push(new StockProductos(1, "Café italiano", 2400, 12));
-arrayProductos.push(new StockProductos(2, "Café brasil", 2400, 4));
-arrayProductos.push(new StockProductos(3, "Café colombia", 2400, 0));
-arrayProductos.push(new StockProductos(4, "Cafetera italiana", 6500, 4));
-arrayProductos.push(new StockProductos(5, "Cafetera filtro", 9700, 4));
-arrayProductos.push(new StockProductos(6, "Jarra pitcher", 8600, 0));
+let listaProductos = new Array();
+listaProductos.push(new StockProductos(1, "Café italiano", 2400, 12));
+listaProductos.push(new StockProductos(2, "Café brasil", 2400, 4));
+listaProductos.push(new StockProductos(3, "Café colombia", 2400, 0));
+listaProductos.push(new StockProductos(4, "Cafetera italiana", 6500, 4));
+listaProductos.push(new StockProductos(5, "Cafetera filtro", 9700, 4));
+listaProductos.push(new StockProductos(6, "Jarra pitcher", 8600, 0));
 
 
 

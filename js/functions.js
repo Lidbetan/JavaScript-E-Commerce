@@ -1,3 +1,5 @@
+/*Esta function sirve para validar la compra, toma como parámetro la variable realizar_compra, la cual se define con un prompt.
+En caso de que el usuario ingrese "SI" o "NO", retorna true, por el contrario, retorna false*/
 function validarCompra(realizar_compra) {
     if (realizar_compra == "SI" || realizar_compra == "NO") {
         return true;
@@ -5,8 +7,6 @@ function validarCompra(realizar_compra) {
         return false;
     }
 }
-/*Esta function sirve para validar la compra, toma como parámetro la variable realizar_compra, la cual se define con un prompt.
-En caso de que el usuario ingrese "SI" o "NO", retorna true, por el contrario, retorna false*/
 
 
 
@@ -15,7 +15,7 @@ En caso de que el usuario ingrese "SI" o "NO", retorna true, por el contrario, r
 
 
 
-//Parte del código viejo, reemplazado por 
+//Parte del código viejo, reemplazado utilizando el método find().
 /*else {
     switch (articulo) {
         case "1":

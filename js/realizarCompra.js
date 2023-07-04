@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let validacion = validarCompra(realizar_compra);
 
     while (validacion != true) {
-        realizar_compra = prompt("Respuesta inválida. Por favor, ingrese SI o NO");
+        realizar_compra = prompt("Respuesta inválida. Por favor, ingrese SI o NO").toLocaleUpperCase();
         validacion = validarCompra(realizar_compra);
     } /*Cuando NO ingreso "SI" o "NO", validación es false, en dicho caso me vuelve a pedir que ingrese una respuesta válida*/
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
                            ingresado por el usuario, por lo que TIENE QUE SER CONVERTIDO EN NUM mediante parseInt */ 
                 } else {
 
-                    let productoDisponible = arrayProductos.find(function(producto) {
+                    let productoDisponible = listaProductos.find(function(producto) {
                         return producto.getId() === parseInt(articulo);
                     });
                     if (productoDisponible && productoDisponible.getStock() > 0) {//Si el input coincide con un producto con stock > 0
