@@ -1,7 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    let realizar_compra = "";
-    realizar_compra = prompt("Va a realizar alguna compra, por favor responda SI o NO").toLocaleUpperCase();
+    
+    let mensajeInicio = confirm("Bienvenido a Locos por el Café, es usted ADMIN?");
+    while(mensajeInicio) {
+        let mensaje = "Indique lo que desea hacer";
+        mensaje += "\n1)Agregar producto";
+        mensaje += "\n2)Eliminar producto";
+        mensaje += "\n3)Mostrar productos en stock";
+        mensaje += "\n4)Aplicar descuento";
+        mensaje += "\n5)Salir";
+
+        let resp = prompt(mensaje);
+        
+
+        switch(resp) {
+            case "1" :
+                    agregar_producto_nuevo();
+                    break;
+            case "2" :
+                    eliminar_producto();
+                    break;
+            case "3" :
+                    mostrar_stock();
+                    break;
+            case "4" :
+                    aplicar_descuento();
+                    break;
+            case "5" :
+                    salir();
+                    break;
+            default :
+                    alert("No ingresó una opción válida");  
+                            
+        }
+        //Falta articular la forma en que al salir de ADMIN pueda pasar a USER
+    } if(mensajeInicio == false) {
+        let realizar_compra = "";
+    realizar_compra = prompt("Bienvenido/a USER, va realizar alguna compra, por favor responda SI o NO").toLocaleUpperCase();
 
     let validacion = validarCompra(realizar_compra);
 
@@ -42,6 +77,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Que tenga buen día");
                 }
         }
+    }
+
+
+    
 
     }
 );
