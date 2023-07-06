@@ -27,13 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     aplicar_descuento();
                     break;
             case "5" :
-                    salir();
+                    alert("Que tenga buen día");
+                    mensajeInicio = confirm("Bienvenido a Locos por el Café, es usted ADMIN?");
                     break;
             default :
                     alert("No ingresó una opción válida");  
                             
         }
-        //Falta articular la forma en que al salir de ADMIN pueda pasar a USER
+    
     } if(mensajeInicio == false) {
         let realizar_compra = "";
     realizar_compra = prompt("Bienvenido/a USER, va realizar alguna compra, por favor responda SI o NO").toLocaleUpperCase();
@@ -66,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         return producto.getId() === parseInt(articulo);
                     });
                     if (productoDisponible && productoDisponible.getStock() > 0) {//Si el input coincide con un producto con stock > 0
-                        carrito += productoDisponible.descripcionProducto() + "\n";//obtenido mediante la función getStock(), suma el
+                        carrito += productoDisponible.descripcionProductoUser() + "\n";//obtenido mediante la función getStock(), suma el
                         total_compra += productoDisponible.getPrecio();            //artículo al carrito.
                     } else {
                         alert("Este producto no se encuentra disponible");

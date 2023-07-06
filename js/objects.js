@@ -15,9 +15,16 @@ class StockProductos {//Clase constructora de objetos de la lista de productos d
     }
     /**
      * 
-     * @returns Muestra la descripción completa de producto
+     * @returns Muestra la descripción completa de producto para el ADMIN
      */
-    descripcionProducto() {
+    descripcionProductoAdmin() {
+        return "#" + this.id + " - " + this.nombre + " $ " + this.precio + " - "+ this.stock;
+    }
+    /**
+     * 
+     * @returns Muestra la descripción completa de producto para el USER 
+     */
+    descripcionProductoUser() {
         return "#" + this.id + " - " + this.nombre + " $ " + this.precio;
     }
     getId() {
@@ -39,7 +46,7 @@ class StockProductos {//Clase constructora de objetos de la lista de productos d
         return this.stock;
     }
     setStock(nuevo_stock) {
-        this.stock = nuevo_stock
+        this.stock = nuevo_stock;
     }
 }
 
