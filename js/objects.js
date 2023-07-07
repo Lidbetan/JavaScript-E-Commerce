@@ -50,7 +50,7 @@ class StockProductos {//Clase constructora de objetos de la lista de productos d
     }
 }
 
-let listaProductos = new Array();
+let listaProductos = [];
 
 
 

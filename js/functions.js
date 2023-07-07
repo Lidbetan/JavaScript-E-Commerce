@@ -120,22 +120,19 @@ function hay_stock() {
     return true;
 }
 
-function aplicar_descuento(){
+function aplicar_descuento(){ //NO LO PUDE HACER FUNCIONAR CON MAP
+
     if(hay_stock) {
         let descuento = parseInt(prompt("Ingrese el descuento que desea aplicar"));
 
         if(!isNaN(descuento)){
             let descuentoAplicado = 1 - ( descuento / 100 ) ;
 
-            listaProductos = listaProductos.map((prod) => {
-                return {
-                    nombre: prod.nombre,
-                    precio: prod.precio * descuentoAplicado,
-                    stock: prod.stock,
-                }
+            listaProductos.forEach((prod) => {
+                prod.precio = prod.precio * descuentoAplicado;
             })
         }
-       return mostrar_array_stock();
+        mostrar_array_stock();
     }
 }
 
