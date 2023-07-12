@@ -36,20 +36,6 @@ El *Footer*  cuenta con enlaces que redirigen a las redes sociales (Facebook e I
 
  Con respecto a los archivos de imágenes empleadas son todas en formato .png y comprimidas, a fin de optimizar el peso del código y sus tiempos de carga. 
 
-Actualmente se está comenzando a implementar JavaScript para crer un carrito de compras.
+~~Actualmente se está comenzando a implementar JavaScript para crer un carrito de compras.~~
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Se implementó Javascript para crear una serie de menúes que actúen como medio de control de los productos para el **Administrador**, ya sea para agregar/quitar productos al stock, controlar el mismo y agregar descuentos y otro para que sea el carrito de compras del **Usuario**.
