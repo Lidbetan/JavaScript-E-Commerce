@@ -126,18 +126,40 @@ function aplicar_descuento(){ //NO LO PUDE HACER FUNCIONAR CON MAP
         let descuento = parseInt(prompt("Ingrese el descuento que desea aplicar"));
 
         if(!isNaN(descuento)){
-            let descuentoAplicado = 1 - ( descuento / 100 ) ;
 
             listaProductos.forEach((prod) => {
-                prod.precio = prod.precio * descuentoAplicado;
+                prod.setDescuento(descuento);
             })
         }
         mostrar_array_stock();
     }
 }
 
+/*function aplicar_descuento(){
 
+    if (hay_stock) {
+        let descuento = parseInt(prompt("Ingrese el descuento a aplicar"));
+        
+        if (!isNaN(descuento)){
 
+            let descuentoAplicado = 1 - (descuento / 100 ) ;
+
+            listaProductos = listaProductos.map((prod) => {
+                return {
+                    nombre: prod.nombre,
+                    precio: prod.precio * descuentoAplicado,
+                    stock: prod.stock,
+                }
+            })        
+
+            
+        }
+
+        mostrar_array_stock();
+    }
+
+}
+*/
 
 
 

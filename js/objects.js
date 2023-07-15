@@ -1,12 +1,12 @@
 let gen_id = 1;
 
 class StockProductos {//Clase constructora de objetos de la lista de productos disponibles.
-/**
- * 
- * @param {*} nombre del producto a agregar 
- * @param {*} precio del producto a agregar
- * @param {*} stock del producto a agregar
- */
+    /**
+     * 
+     * @param {*} nombre del producto a agregar 
+     * @param {*} precio del producto a agregar
+     * @param {*} stock del producto a agregar
+     */
     constructor(nombre, precio, stock) {
         this.nombre = nombre;
         this.precio = precio;
@@ -18,7 +18,7 @@ class StockProductos {//Clase constructora de objetos de la lista de productos d
      * @returns Muestra la descripción completa de producto para el ADMIN
      */
     descripcionProductoAdmin() {
-        return "#" + this.id + " - " + this.nombre + " $ " + this.precio + " - "+ this.stock;
+        return "#" + this.id + " - " + this.nombre + " $ " + this.precio + " - " + this.stock;
     }
     /**
      * 
@@ -48,9 +48,13 @@ class StockProductos {//Clase constructora de objetos de la lista de productos d
     setStock(nuevo_stock) {
         this.stock = nuevo_stock;
     }
-}
 
-let listaProductos = [];
+    setDescuento(descuento) { //Aplica un descuento en función del monto ingresador por el ADMIN.
+        let descuentoAplicado = 1 - (descuento / 100);
+        return this.precio = this.precio * descuentoAplicado;
+    }
+}
+let listaProductos = new Array();
 
 
 

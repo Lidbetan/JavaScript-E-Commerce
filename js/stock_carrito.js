@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 articulo = prompt("Ingrese el código del artículo y/o ESC para finalizar").toLocaleUpperCase();
 
                 if (articulo === "ESC") {
-                    alert(`Artículos comprados:\n${carrito}\nEl total de su compra es de:\n ${total_compra}\n Gracias por su compra`);//("Artículos comprados:\n" + carrito + "\nEl total de su compra es de:\n$" + total_compra + "\nGracias por su compra");
+                    alert(`Artículos comprados:\n${carrito}\nEl total de su compra es de:\n $${total_compra}\n Gracias por su compra`);//("Artículos comprados:\n" + carrito + "\nEl total de su compra es de:\n$" + total_compra + "\nGracias por su compra");
                     break;/*Reemplacé switch por el siguiente código. De esta forma declaro una nueva variable productoDisponible
                            que tiene como valor una función/método find, que retorna el id del producto y lo compara con el input
                            ingresado por el usuario, por lo que TIENE QUE SER CONVERTIDO EN NUM mediante parseInt */ 
