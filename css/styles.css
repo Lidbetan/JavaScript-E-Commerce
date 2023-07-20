@@ -13,8 +13,9 @@
   box-sizing: border-box !important;
 }
 
-/**Variables**/ /**#botones**/
-.boton-agregar-carrito, main.contacto section div.contacto-wrapper div.contacto-form form fieldset div.input.submit input, main section div.contenedor-ver-productos a.boton-ver-productos, main section div div.variedades div form input.boton-agregar-carrito {
+/**Variables**/
+/**#botones**/
+.boton-agregar-carrito, main section div.contenedor-ver-productos a.boton-ver-productos, main section div div.variedades div form input.boton-agregar-carrito {
   border: 1px solid #886138;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
@@ -88,14 +89,21 @@ header nav div a h1 span {
   color: #6F1717;
   font-weight: bold;
 }
-header nav div div ul li {
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: bolder;
-  color: #886138;
+header nav div div.header-buscador-marco {
+  height: 40px;
+  border: 1px solid #FFF2CC;
+  width: 55%;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 15px;
 }
-header nav div div ul li a:hover {
-  text-shadow: 0px 6px 3px rgba(111, 23, 23, 0.6);
+header nav div div.header-buscador-marco input {
+  width: 90%;
+  border-radius: 6px;
+  border: 2px solid #886138;
 }
 
 /**^HEADER**/
@@ -285,168 +293,85 @@ main section div div.variedades div p.precio {
   color: #886138;
 }
 
-/**^MAIN-NOSOTROS**/
-main.nosotros section {
+/**^MAIN-PRODUCTOS**/
+main section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: center;
+  justify-content: center;
+  align-items: center;
+}
+main section h2 {
+  font-family: "Lilita One", cursive;
+  color: #6F1717;
+  font-size: 3rem;
+}
+main section div.contenedor-variedades {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   gap: 4rem;
-  margin: 3rem 0;
+  width: 95%;
 }
-main.nosotros section div.origenes {
+main section div.contenedor-variedades div.variedades {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  width: 95%;
+  width: 100%;
+  gap: 2rem;
 }
-main.nosotros section div.origenes h2 {
-  margin: 3rem 0;
-}
-main.nosotros section div.origenes div p {
-  text-align: justify;
-  margin: 2rem 0;
-  line-height: 3rem;
-}
-main.nosotros section div.filosofia {
+main section div.contenedor-variedades div.variedades div {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  width: 95%;
-}
-main.nosotros section div.filosofia h2 {
-  margin: 3rem 0;
-}
-main.nosotros section div.filosofia div p {
-  text-align: justify;
-  margin: 2rem 0;
-  line-height: 3rem;
+  gap: 1rem;
+  width: 61%;
 }
 
-/**^MAIN-PRODUCTOS**/
-main.productos {
-  margin-bottom: 3rem;
-}
-/**^MAINCONTACTO**/
-main.contacto h2 {
-  font-family: "Lilita One", cursive;
-  color: #6F1717;
-  font-size: 3rem;
-}
-main.contacto section {
+main section div div {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 4rem;
 }
-main.contacto section div.contacto-wrapper {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 95%;
-  gap: 2rem;
+main section div div img {
+  border-radius: 10%;
+  width: 50%;
 }
-main.contacto section div.contacto-wrapper div.contacto-info {
-  text-align: center;
-}
-main.contacto section div.contacto-wrapper div.contacto-info p {
-  font-weight: bold;
-}
-main.contacto section div.contacto-wrapper div.contacto-info p span {
-  color: #6F1717;
-}
-main.contacto section div.contacto-wrapper div.iframe iframe {
-  width: 100%;
-}
-main.contacto section div.contacto-wrapper div.contacto-form form {
-  background-color: #FFF2CC;
-  color: #886138;
-  width: min(41rem, 100%);
-  margin: 0 auto;
-  border-radius: 1rem;
-}
-main.contacto section div.contacto-wrapper div.contacto-form form fieldset {
-  padding: 2rem;
-}
-main.contacto section div.contacto-wrapper div.contacto-form form fieldset legend {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-}
-main.contacto section div.contacto-wrapper div.contacto-form form fieldset div.contenedor-inputs {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-main.contacto section div.contacto-wrapper div.contacto-form form fieldset div.contenedor-inputs div.input label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-main.contacto section div.contacto-wrapper div.contacto-form form fieldset div.contenedor-inputs div.input input {
-  border: none;
-  padding: 0.8rem;
-  border-radius: 0.5rem;
-}
-main.contacto section div.contacto-wrapper div.contacto-form form fieldset div.contenedor-inputs div.input.mensaje {
-  width: 100%;
-}
-main.contacto section div.contacto-wrapper div.contacto-form form fieldset div.contenedor-inputs div.input.mensaje textarea {
-  border: none;
-  margin-top: -2rem;
-  padding: 0.8rem;
-}
-main.contacto section div.contacto-wrapper div.contacto-form form fieldset div.input.submit {
-  text-align: center;
-}
-main.recetas section {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-main.recetas section div {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  width: 90%;
-}
-main.recetas section div div img {
+
+main section div div.variedades div {
   width: 75%;
-  height: auto;
 }
-main.recetas section div div ul {
-  text-align: justify;
-}
-main.recetas section div div ul li {
-  list-style-type: disc;
-}
-main.recetas section div div ul li span {
+main section div div.variedades div p.nombre {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
   font-size: 1.8rem;
-  font-weight: 600;
+  color: #886138;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-shadow: 0px 1px, 1px 0px, 1px 1px;
 }
-main.recetas section div div ul li p {
-  text-align: justify;
-  line-height: 3rem;
+main section div div.variedades div p.info {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  color: #886138;
+  line-height: 2rem;
+}
+main section div div.variedades div p.precio {
+  text-align: center;
+  font-weight: bolder;
+  text-shadow: 0px 1px, 1px 0px, 1px 1px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  color: #886138;
 }
 
 /**^MEDIA-QUERIE-768**/

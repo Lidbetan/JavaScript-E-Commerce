@@ -1,11 +1,12 @@
+//------SERIA MI BASE DE DATOS---------//
 class GestionProductos {
     iniciar(){
-        productos = [
+        listaProductos = [
             {"id": 1,
             "nombre": "Café Italiano",
             "descripcion": "Café tipo italiano, robusto, intenso, 100% granos arábigos...",
             "precio": 2400,
-            "stock": 1,
+            "stock": 10,
             "img": "cafe-italiano.png",
             "promo": 1,
             },
@@ -13,7 +14,7 @@ class GestionProductos {
             "nombre": "Café Brasil",
             "descripcion": "Café tipo brasil, robusto, intenso, 100% granos arábigos...",
             "precio": 2400,
-            "stock": 1,
+            "stock": 5,
             "img": "cafe-italiano.png",
             "promo": 0,
             },
@@ -21,7 +22,7 @@ class GestionProductos {
             "nombre": "Café Colombia",
             "descripcion": "Café tipo colombia, robusto, intenso, 100% granos arábigos...",
             "precio": 2400,
-            "stock": 1,
+            "stock": 0,
             "img": "cafe-colombia.png",
             "promo": 0,
             },
@@ -45,13 +46,53 @@ class GestionProductos {
             "nombre": "Jarro Pitcher",
             "descripcion": "Jarro pitcher profesional, para hacer el mejor latte art!",
             "precio": 8400,
-            "stock": 1,
+            "stock":0,
             "img": "jarro-pitcher.png",
             "promo": 0,
             },
             
         ]
-        let productosPromo =  productos.filter(prod => prod.promo === 1);//Filtra productos en promoción (promo = 1)
-        //Falta el recurso para cargarlo, ya que no hay barra buscadora todavia. 
+        let productosPromo =  listaProductos.filter(prod => prod.promo === 1);//Filtra productos en promoción (promo = 1)
+        this.cargarProductos(productosPromo);
+    }
+
+    //---Se encarga de crear las cards de los productos y pushearlos dentro del HTML--//
+    cargarProductos(listaProductos){
+        const divProductos = document.querySelector("#productos");
+        divProductos.innerHTML = ""; //Aplicar innerHTML con string vació elimina cualquier elemento dentro de este.
+
+        //---Si el array de objetos no contiene nada, ocurre lo siguiente---//
+        if(productos.lenght == 0){
+            this.mostrarMensaje("Actualmente no hay productos en stock");
+            return false;
+        //--En caso contrario, se recorre el array con un forEach y ACA SE CREAN LAS CARD DE LOS PRODUCTOS--/
+        } else{
+            listaProductos.forEach((prod) => {
+
+                let id = prod.id;
+                let nombre = prod.nombre;
+                let descripcion = prod.descripcion;
+                let precio = prod.precio;
+                let img = prod.img;
+            
+                let cardProd = document.createElement("DIV");
+            
+                cardProd.classList.add("variedades");
+            
+                cardProd.innerHTML = `  <div>
+                                            <img src="../assets/img/${img}" alt="cafe-italiano">
+                                        </div>
+                                        <div>
+                                            <p class="nombre">${nombre}</p>
+                                            <p class="info">${descripcion}</p>
+                                            <p class="precio">${precio}</p>
+                                            <form action="" method="post">
+                                                <input class="boton-agregar-carrito" type="submit" value="Agregar al carrito">
+                                            </form>
+                                        </div>
+                                    `
+                divProductos.appendChild(cardProd)
+            })
+        }
     }
 }

@@ -19,23 +19,20 @@ header {
                 }
             }
 
-            div {
-                ul {
-                    li {
-                        text-transform: uppercase;
-                        text-align: center;
-                        font-weight: bolder;
-                        color: $marron;
-                    }
-                }
-
-                ul {
-                    li {
-                        a:hover {
-                            text-shadow: 0px 6px 3px rgba(111, 23, 23, 0.6);
-                        }
-
-                    }
+            div.header-buscador-marco {
+                height: 40px;
+                border: 1px solid $base;
+                width: 55%;
+                border-radius: 6px;
+                display: flex;
+                justify-content:center;
+                align-items: center;  
+                padding-left: 5px;
+                padding-right: 15px;
+                input{
+                    width:90%;
+                    border-radius: 6px;
+                    border: 2px solid $marron;
                 }
             }
         }
