@@ -76,5 +76,27 @@ main {
         }
 
     }
+    div.offcanvas{
+        
+        margin-top: 95px;
+        border-radius: 10px 0 0 0;
+        div.offcanvas-header{
+            @include flex(row,nowrap,space-between,center);
+            h3{
+                margin: 0;
+            }
+            button{
+                margin: 0;
+            }
+        }
+        div.offcanvas-body{
+            display:block;
+            div.contenedor-carrito{
+                div.row{
+                    @include flex(row!important,nowrap!important,space-between!important,center!important);
+                }
+            }
+        }
+    }
     }
 }

@@ -3,8 +3,9 @@ header {
     background-color: $base;
 
     nav {
-        div{
+        div {
             @include flex(row, nowrap, space-between, center !important);
+
             a {
                 img {
                     border-radius: 50%;
@@ -12,8 +13,9 @@ header {
 
                 h1 {
                     display: none;
-                    span{
-                        color:$granate;
+
+                    span {
+                        color: $granate;
                         font-weight: bold;
                     }
                 }
@@ -25,14 +27,33 @@ header {
                 width: 55%;
                 border-radius: 6px;
                 display: flex;
-                justify-content:center;
-                align-items: center;  
+                justify-content: space-evenly;
+                align-items: center;
                 padding-left: 5px;
                 padding-right: 15px;
-                input{
-                    width:90%;
+
+                input {
+                    width: 90%;
+                    height: 30px;
                     border-radius: 6px;
                     border: 2px solid $marron;
+
+                }
+            }
+
+            div.carrito-compras {
+                a {
+                    i {
+                        font-size: 2.5rem;
+                        span#badgeCarrito {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 7px;
+                            font-size: 1rem;
+                            background-color: $marron !important;
+                        }
+                    }
                 }
             }
         }

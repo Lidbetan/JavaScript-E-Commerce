@@ -8,15 +8,15 @@ class GestionProductos {
             "precio": 2400,
             "stock": 10,
             "img": "cafe-italiano.png",
-            "promo": 1,
+            "oferta": 1,
             },
             {"id": 2,
             "nombre": "Café Brasil",
             "descripcion": "Café tipo brasil, robusto, intenso, 100% granos arábigos...",
             "precio": 2400,
             "stock": 5,
-            "img": "cafe-italiano.png",
-            "promo": 0,
+            "img": "cafe-brasil.png",
+            "oferta": 0,
             },
             {"id": 3,
             "nombre": "Café Colombia",
@@ -24,7 +24,7 @@ class GestionProductos {
             "precio": 2400,
             "stock": 0,
             "img": "cafe-colombia.png",
-            "promo": 0,
+            "oferta": 0,
             },
             {"id": 4,
             "nombre": "Cafetera Filtro",
@@ -32,7 +32,7 @@ class GestionProductos {
             "precio": 6400,
             "stock": 1,
             "img": "cafetera-filtro.png",
-            "promo": 0,
+            "oferta": 0,
             },
             {"id": 5,
             "nombre": "Cafetera Italiana",
@@ -40,7 +40,7 @@ class GestionProductos {
             "precio": 9400,
             "stock": 1,
             "img": "cafetera-italiana.png",
-            "promo": 0,
+            "oferta": 0,
             },
             {"id": 6,
             "nombre": "Jarro Pitcher",
@@ -48,12 +48,14 @@ class GestionProductos {
             "precio": 8400,
             "stock":0,
             "img": "jarro-pitcher.png",
-            "promo": 0,
+            "oferta": 0,
             },
             
         ]
-        let productosPromo =  listaProductos.filter(prod => prod.promo === 1);//Filtra productos en promoción (promo = 1)
-        this.cargarProductos(productosPromo);
+        let productosStock =  listaProductos.filter(prod => prod.stock >= 1);//Filtra productos con stock disponible.
+        this.cargarProductos(productosStock);
+        /*let productosOferta = listaProductos.filter(prod => prod.oferta === 1);//Filtra productos en oferta
+        this.cargarProductos(productosOferta);*/
     }
 
     //---Se encarga de crear las cards de los productos y pushearlos dentro del HTML--//
@@ -69,18 +71,14 @@ class GestionProductos {
         } else{
             listaProductos.forEach((prod) => {
 
-                let id = prod.id;
-                let nombre = prod.nombre;
-                let descripcion = prod.descripcion;
-                let precio = prod.precio;
-                let img = prod.img;
-            
+                const {nombre,descripcion,precio,img} = prod; 
+
                 let cardProd = document.createElement("DIV");
             
                 cardProd.classList.add("variedades");
             
                 cardProd.innerHTML = `  <div>
-                                            <img src="../assets/img/${img}" alt="cafe-italiano">
+                                            <img src="../assets/img/${img}">
                                         </div>
                                         <div>
                                             <p class="nombre">${nombre}</p>
@@ -95,4 +93,11 @@ class GestionProductos {
             })
         }
     }
-}
+
+}  
+//---Para cargar SOLO productos en oferta---//--FALTA
+function enOferta(){
+
+};
+
+//--
