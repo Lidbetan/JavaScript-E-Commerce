@@ -15,7 +15,7 @@
 
 /**Variables**/
 /**#botones**/
-.boton-agregar-carrito, main section div.contenedor-ver-productos a.boton-ver-productos, main section div div.variedades div form input.boton-agregar-carrito {
+.boton-agregar-carrito, main section div div.variedades div a.boton-agregar-carrito, main section div.contenedor-ver-productos div.variedades div a.boton-ver-productos, main section div.contenedor-ver-productos a.boton-ver-productos, main section div div.variedades div form input.boton-agregar-carrito {
   border: 1px solid #886138;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
@@ -358,10 +358,10 @@ main section div div img {
   width: 50%;
 }
 
-main section div div.variedades div {
+main section div div.variedades {
   width: 75%;
 }
-main section div div.variedades div p.nombre {
+main section div div.variedades div h3.nombre {
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 1.8rem;
@@ -370,7 +370,7 @@ main section div div.variedades div p.nombre {
   font-weight: bolder;
   text-shadow: 0px 1px, 1px 0px, 1px 1px;
 }
-main section div div.variedades div p.info {
+main section div div.variedades div p.descripcion {
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
@@ -385,27 +385,27 @@ main section div div.variedades div p.precio {
   font-size: 1.6rem;
   color: #886138;
 }
-main section div.offcanvas {
+main div.offcanvas {
   margin-top: 95px;
   border-radius: 10px 0 0 0;
 }
-main section div.offcanvas div.offcanvas-header {
+main div.offcanvas div.offcanvas-header {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
 }
-main section div.offcanvas div.offcanvas-header h3 {
+main div.offcanvas div.offcanvas-header h3 {
   margin: 0;
 }
-main section div.offcanvas div.offcanvas-header button {
+main div.offcanvas div.offcanvas-header button {
   margin: 0;
 }
-main section div.offcanvas div.offcanvas-body {
+main div.offcanvas div.offcanvas-body {
   display: block;
 }
-main section div.offcanvas div.offcanvas-body div.contenedor-carrito div.row {
+main div.offcanvas div.offcanvas-body div.contenedor-carrito div.row {
   display: flex;
   flex-direction: row !important;
   flex-wrap: nowrap !important;

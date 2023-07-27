@@ -46,33 +46,48 @@ main {
     section {
         div {
             div.variedades {
-                div {
+
                     width:75%;
-                    p.nombre {
-                        text-align: center;
-                        font-family: $fuente-secundaria;
-                        font-size: 1.8rem;
-                        color: $marron;
-                        text-transform: uppercase;
-                        font-weight: bolder;
-                        text-shadow: 0px 1px, 1px 0px, 1px 1px;
+                    div{
+
+                        h3.nombre {
+                            text-align: center;
+                            font-family: $fuente-secundaria;
+                            font-size: 1.8rem;
+                            color: $marron;
+                            text-transform: uppercase;
+                            font-weight: bolder;
+                            text-shadow: 0px 1px, 1px 0px, 1px 1px;
+                        }
                     }
-                    p.info {
-                        text-align: center;
-                        font-family: $fuente-secundaria;
-                        font-size: 1.6rem;
-                        color: $marron;
-                        line-height: 2rem;
+                    div{
+
+                        p.descripcion {
+                            text-align: center;
+                            font-family: $fuente-secundaria;
+                            font-size: 1.6rem;
+                            color: $marron;
+                            line-height: 2rem;
+                        }
                     }
-                    p.precio {
-                        text-align: center;
-                        font-weight: bolder;
-                        text-shadow: 0px 1px, 1px 0px, 1px 1px;
-                        font-family: $fuente-secundaria;
-                        font-size: 1.6rem;
-                        color: $marron;
+                    div{
+
+                        p.precio {
+                            text-align: center;
+                            font-weight: bolder;
+                            text-shadow: 0px 1px, 1px 0px, 1px 1px;
+                            font-family: $fuente-secundaria;
+                            font-size: 1.6rem;
+                            color: $marron;
+                        }
+                    }
+                    div{
+
+                        a.boton-agregar-carrito{
+                            @extend .boton-agregar-carrito
+                        }
+                    }
                 }
-            }
         }
 
     }
@@ -99,4 +114,4 @@ main {
         }
     }
     }
-}
+
