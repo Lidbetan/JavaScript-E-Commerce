@@ -7,35 +7,27 @@ main {
             color:$granate;
             font-size: 3rem;
         }
-        div.contenedor-variedades {
-            @include flex(column, nowrap, center, center);
-            gap: 4rem;
-            width:95%;
-
-            div.variedades {
-                @include flex(column, nowrap, center, center);
-                width: 100%;
-                gap: 2rem;
-
-                div {
-                    @include flex(column, nowrap, center, center);
-                    gap: 1rem;
-                    width: 61%;
-                }
-            }
-        }
     }
 }
 
 main {
     section {
-        div {
-            div {
-                @include flex(column, nowrap, center, center);
+        div.contenedor__productos{
+            div#productos {
+                @include flex(row,nowrap,center,end);
+                div.variedades {
+                    @include flex(column, nowrap, center, center);
+                    text-align: center;
+                    margin: 2rem auto;
+                    div{
+                        padding:0.5rem;
 
-                img {
-                    border-radius: 10%;
-                    width: 50%;
+                        img {
+                            border-radius: 10%;
+                            width: 50%;
+                            margin:auto;
+                        }
+                    }
                 }
             }
         }

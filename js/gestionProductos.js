@@ -84,8 +84,8 @@ class GestionProductos {
                 producto.classList.add("variedades");
                 producto.id = "row_" + id;
 
-                //REVISAR ESTA PARTE!!!!
-                producto.innerHTML = `  <div>
+                producto.innerHTML = `
+                                        <div>
                                             <img src="../assets/img/${img}">
                                         </div>
                                         <div>
@@ -153,8 +153,9 @@ class GestionProductos {
     }
 
     actualizarCarrito() {
-        //this.actualizarContador();//FALTA
-        this.mostrarCarrito();//FALTA
+        this.actualizarContador();
+        this.mostrarCarrito();
+        this.guardarCarrito();//método encargado de guardar el carrito en LOCAL STORAGE
     }
 
     mostrarCarrito() {
@@ -189,17 +190,58 @@ class GestionProductos {
                                 ${cantidad}  
                             </div>
                             
-                            <div class="col-2 d-flex align-items-center justify-content-center p-2 border-bottom">
+                            <div class="col-2 d-flex align-items-center justify-content-center p-2 border-bottom" id="eliminar-carrito">
                                 <a href="javascript:eliminar(${id})">
                                     <i class="fa-solid fa-square-minus fa-2x"></i>
                                 </a>
                             </div>
                             `;
-            console.log(carrito)
             detalleCarrito.appendChild(row);
-        })
+        });
+
+        let rowTotal = document.createElement("DIV");
+        rowTotal.classList.add("row");
+        rowTotal.innerHTML = `
+                        <div class="col-3 d-flex align-items-center p-2 border-bottom">
+                            <p>Total a pagar:</p>
+                        </div>
+
+                        <div class="col-3 d-flex align-items-center p-2 border-bottom">
+                            ${total}
+                        </div>
+        
+                        `;
+        detalleCarrito.appendChild(rowTotal);
+
 
 
     }
+    //---Encargada de asociar el carrito al método que cuenta la cantidad de productos ---//
+    actualizarContador(){
+        let totalCarrito = this.contarProductos();//Declaro totalCarrito y le asigno el método encargado de entregar el total de productos.
+
+        let contadorCarrito = document.querySelector("#badgeCarrito");//Crea la componente asociada al elemento con ID #badgeCarrito.
+        contadorCarrito.innerHTML = totalCarrito; //Actualizo su contenido con el valor de totalCarrito
+
+
+
+    }
+    //---Encargada de actualizar el contador del carrito ---//
+    contarProductos(){
+        let contarProductos = 0;
+
+        carrito.forEach((producto)=>{//Por cada producto dentro de carrito[], me devuelve la cantidad + el valor actual de contarProductos.
+            contarProductos = contarProductos + parseInt(producto.cantidad);
+        })
+        return contarProductos;//Me retorna el valor actualizado.
+    };
+
+    //---Guardar en LOCAL STORAGE---//
+    guardarCarrito(){
+        localStorage.setItem(key_carrito, JSON.stringify( carrito ))
+    }
+
 
 }  
+
+

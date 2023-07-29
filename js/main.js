@@ -1,12 +1,19 @@
-let carrito = new Array();
+//--- Globales---//
+let carrito = [];
 let listaProductos = new Array();
 
 let gestor;
+const key_carrito = "productosCarrito";
+
 
  //---Carga primero los productos EN STOCK ---//
 document.addEventListener("DOMContentLoaded", ()=>{
+    //Extrae la clave valor (productosCarrito, carrito) almacenada en LOCAL STORAGE y la parsea.
+    carrito = JSON.parse( localStorage.getItem(key_carrito) ) || []; //si no hay nada, devuelve un array vacio
+
     gestor = new GestionProductos();
-    gestor.iniciar();
+    gestor.actualizarCarrito();//Actualiza el contador, el carrito y lo muestra en función de que haya algo
+    gestor.iniciar();           //guardado en LOCAL STORAGE.
 })
 
 //---Busca productos en la barra de búsqueda---//
@@ -43,3 +50,6 @@ function addCarrito(id){
     gestor.addCart(cart);
     console.log(cart)                                        
 }
+
+
+

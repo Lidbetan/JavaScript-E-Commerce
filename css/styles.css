@@ -221,6 +221,13 @@ footer section div.siguenos p {
 }
 
 /**^boton-carrito**/
+main section div.offcanvas div.offcanvas-body div.contenedor-carrito div.row {
+  flex-wrap: wrap !important;
+}
+main section div.offcanvas div.offcanvas-body div.contenedor-carrito div.row div#eliminar-carrito a {
+  color: #6F1717 !important;
+}
+
 /**^boton-ver-productos**/
 main section div.contenedor-ver-productos a.boton-ver-productos {
   margin: 3rem 0;
@@ -318,44 +325,30 @@ main section h2 {
   color: #6F1717;
   font-size: 3rem;
 }
-main section div.contenedor-variedades {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-  width: 95%;
-}
-main section div.contenedor-variedades div.variedades {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 2rem;
-}
-main section div.contenedor-variedades div.variedades div {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  width: 61%;
-}
 
-main section div div {
+main section div.contenedor__productos div#productos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: end;
+}
+main section div.contenedor__productos div#productos div.variedades {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  margin: 2rem auto;
 }
-main section div div img {
+main section div.contenedor__productos div#productos div.variedades div {
+  padding: 0.5rem;
+}
+main section div.contenedor__productos div#productos div.variedades div img {
   border-radius: 10%;
   width: 50%;
+  margin: auto;
 }
 
 main section div div.variedades {
