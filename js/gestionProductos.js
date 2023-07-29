@@ -191,7 +191,7 @@ class GestionProductos {
                             </div>
                             
                             <div class="col-2 d-flex align-items-center justify-content-center p-2 border-bottom" id="eliminar-carrito">
-                                <a href="javascript:eliminar(${id})">
+                                <a href="javascript:eliminarCarrito(${id})">
                                     <i class="fa-solid fa-square-minus fa-2x"></i>
                                 </a>
                             </div>
@@ -236,6 +236,28 @@ class GestionProductos {
         return contarProductos;//Me retorna el valor actualizado.
     };
 
+    //--- Eliminar productos del carrito ---//
+    eliminarCart(id) {
+        
+        if (carrito) { 
+            //Si el articulo existe en el carrito, lo identifica por ID y disminuye en 1 el valor de la propiedad CANTIDAD.
+            const articulo = carrito.map(producto => {
+                if (producto.id === id) {
+                    producto.cantidad--;
+                    return producto;
+                }
+                else {
+                    return producto;
+                };
+
+            })
+            //Si el valor de cantidad llega a 0, elimina el tipo de producto del carrito.
+            carrito = carrito.filter(producto => producto.cantidad > 0);
+            this.actualizarCarrito();
+        }
+    }
+    
+    
     //---Guardar en LOCAL STORAGE---//
     guardarCarrito(){
         localStorage.setItem(key_carrito, JSON.stringify( carrito ))

@@ -51,5 +51,9 @@ function addCarrito(id){
     console.log(cart)                                        
 }
 
+function eliminarCarrito(id){
+    gestor.eliminarCart(id);
+}
+
 
 
