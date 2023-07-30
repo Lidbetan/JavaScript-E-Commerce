@@ -25,7 +25,6 @@ document.querySelector("#buscar").addEventListener("keyup",() =>{//Le pido que e
         gestor.buscar(q)
 
     }else{
-        gestor.mostrarHeader("Productos en stock");
         gestor.iniciar();//Mi lista de productos visible arranca con aquellos que tienen stock por defecto
         //gestor.cargarProductos();  <----------------- Por lo cual no hace falta llamar con cargarProducto()
     }

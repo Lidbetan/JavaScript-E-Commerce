@@ -108,12 +108,6 @@ class GestionProductos {
         }
     }
 
-    //--- Método para mostrer un mensaje en #header_productos ---//
-    mostrarHeader(msg) {
-        const headerProductos = document.querySelector("#header_productos");
-        headerProductos.innerHTML = msg;
-    }
-
     //--- Método para buscar el valor ingresado en la barra de búsqueda y arrojar el resultado apropiado ---//
     buscar(valor) {
         let resultado = listaProductos.filter(producto => //mediante filter le pido que busque dentro de listaProductos productos en los cuales
@@ -124,12 +118,17 @@ class GestionProductos {
             let resultado_stock = resultado.filter(producto => producto.stock >= 1)
             if (resultado_stock.length > 0) {//En caso de haber stock, carga los productos con dicho array.
                 this.cargarProductos(resultado_stock);
-            } else {//Si no hay stock, arroja el siguiente mensaje --FALTA TOASTIFY/SWA2
-                alert("Actualmente no contamos con stock para ese producto")
+            } else {//Si no hay stock, arroja el siguiente mensaje 
+                Swal.fire({
+                    title:"El producto no se encuentra disponible",
+
+                })
             }
 
         } else {//Si no coincide lo buscado con algún producto indexado, arroja el siguiente mensaje -- FALTA TOASTIFY/SWA2
-            alert("No se encontró el producto");
+            Swal.fire({
+                title:"No se encontró producto con ese nombre",
+            })
         }
 
     }
@@ -183,7 +182,7 @@ class GestionProductos {
                             </div>
                             
                             <div class="col-3 d-flex align-items-center justify-content-end p-2 border-bottom">
-                                ${precio}  
+                                $${precio}  
                             </div>
                     
                             <div class="col-3 d-flex align-items-center justify-content-end p-2 border-bottom">
@@ -202,12 +201,12 @@ class GestionProductos {
         let rowTotal = document.createElement("DIV");
         rowTotal.classList.add("row");
         rowTotal.innerHTML = `
-                        <div class="col-3 d-flex align-items-center p-2 border-bottom">
-                            <p>Total a pagar:</p>
+                        <div class="total-carrito col-6 d-flex align-items-center p-2 border-bottom">
+                            <p class=" mb-0">Total a pagar:</p>
                         </div>
 
-                        <div class="col-3 d-flex align-items-center p-2 border-bottom">
-                            ${total}
+                        <div class="total-carrito col-3 d-flex align-items-center p-2 border-bottom">
+                            $${total}
                         </div>
         
                         `;
@@ -254,6 +253,13 @@ class GestionProductos {
             //Si el valor de cantidad llega a 0, elimina el tipo de producto del carrito.
             carrito = carrito.filter(producto => producto.cantidad > 0);
             this.actualizarCarrito();
+
+            Toastify({
+                text:"Has eliminado el producto",
+                duration: 150000,
+                gravity:"bottom",
+                ClassName:"toast-borrar-exito", //no me agrega la clase :( :(
+            }).showToast();
         }
     }
     

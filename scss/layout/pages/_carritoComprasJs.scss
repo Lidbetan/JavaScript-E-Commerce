@@ -1,4 +1,9 @@
 /**^MAIN-PRODUCTOS**/
+body {
+    div.toast-borrar-exito{
+        background-color: red !important;
+    }
+}
 main {
     section {
         @include flex(column,center,center,center);
@@ -84,12 +89,13 @@ main {
 
     }
     div.offcanvas{
-        
+        background-color: $base;
         margin-top: 95px;
         border-radius: 10px 0 0 0;
         div.offcanvas-header{
             @include flex(row,nowrap,space-between,center);
             h3{
+                color: $granate;
                 margin: 0;
             }
             button{
@@ -101,6 +107,10 @@ main {
             div.contenedor-carrito{
                 div.row{
                     @include flex(row!important,nowrap!important,space-between!important,center!important);
+                    div.total-carrito{
+                        border-bottom: 1px solid $granate!important;
+                        font-weight: bold;
+                    }
                 }
             }
         }

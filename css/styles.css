@@ -313,6 +313,10 @@ main section div div.variedades div p.precio {
 }
 
 /**^MAIN-PRODUCTOS**/
+body div.toast-borrar-exito {
+  background-color: red !important;
+}
+
 main section {
   display: flex;
   flex-direction: column;
@@ -379,6 +383,7 @@ main section div div.variedades div p.precio {
   color: #886138;
 }
 main div.offcanvas {
+  background-color: #FFF2CC;
   margin-top: 95px;
   border-radius: 10px 0 0 0;
 }
@@ -390,6 +395,7 @@ main div.offcanvas div.offcanvas-header {
   align-items: center;
 }
 main div.offcanvas div.offcanvas-header h3 {
+  color: #6F1717;
   margin: 0;
 }
 main div.offcanvas div.offcanvas-header button {
@@ -404,6 +410,10 @@ main div.offcanvas div.offcanvas-body div.contenedor-carrito div.row {
   flex-wrap: nowrap !important;
   justify-content: space-between !important;
   align-items: center !important;
+}
+main div.offcanvas div.offcanvas-body div.contenedor-carrito div.row div.total-carrito {
+  border-bottom: 1px solid #6F1717 !important;
+  font-weight: bold;
 }
 
 /**^MEDIA-QUERIE-768**/
