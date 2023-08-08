@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locos por el Café - Finaliza tu compra!</title>
+    <link href="../css/styles.css" rel="stylesheet">
+
+</head>
+<body>
+    <main class="contenedor">
+
+        <h3 class="centrar-texto">Ingrese los datos de su tarjeta</h3>
+
+        <div class="contacto-bg"></div>
+
+        <form class="formulario">
+            <div class="campo">
+                <label class="campo__label" for="numero">Número tarjeta</label>
+                <input 
+                    class="campo__field"
+                    type="number" 
+                    placeholder="0000 0000 0000 0000" 
+                    id="numero"
+                >
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="nombre">Nombre titular</label>
+                <input 
+                    class="campo__field"
+                    type="text" 
+                    placeholder="Nombre como figura en la tarjeta" 
+                    id="nombre"
+                >
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="vencimiento">Fecha Vencimiento</label>
+                <input 
+                    class="campo__field"
+                    type="text" 
+                    placeholder="MM/YY" 
+                    id="vencimiento"
+                >
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="cvc">CVC</label>
+                <input 
+                    class="campo__field"
+                    type="number" 
+                    placeholder="CVC" 
+                    id="cvc"
+                >
+            </div>
+
+            <div class="campo">
+                <input id="btn-enviar" type="submit" value="Enviar" class="boton boton--primario">
+            </div>
+        </form>
+        <div class="contenedor-mensaje-exito">
+
+        </div>
+
+        
+    </main>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/gestionProductos.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/finalizarCompra.js"></script>
+    
+    
+    
+</body>
+</html>

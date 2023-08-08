@@ -1,9 +1,5 @@
 /**^MAIN-PRODUCTOS**/
-body {
-    div.toast-borrar-exito{
-        background-color: red !important;
-    }
-}
+
 main {
     section {
         @include flex(column,center,center,center);

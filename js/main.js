@@ -4,23 +4,24 @@ let listaProductos = new Array();
 
 let gestor;
 const key_carrito = "productosCarrito";
+const url = "../js/bd.json";
 
 
- //---Carga primero los productos EN STOCK ---//
+
+//---Carga primero los productos EN STOCK ---//
 document.addEventListener("DOMContentLoaded", ()=>{
     //Extrae la clave valor (productosCarrito, carrito) almacenada en LOCAL STORAGE y la parsea.
     carrito = JSON.parse( localStorage.getItem(key_carrito) ) || []; //si no hay nada, devuelve un array vacio
-
     gestor = new GestionProductos();
-    gestor.actualizarCarrito();//Actualiza el contador, el carrito y lo muestra en función de que haya algo
-    gestor.iniciar();           //guardado en LOCAL STORAGE.
+    gestor.actualizarCarrito();//Actualiza el contador, el carrito y lo muestra en función de que haya algo guardado en LOCAL STORAGE.
+    gestor.iniciar();           
 })
 
 //---Busca productos en la barra de búsqueda---//
 document.querySelector("#buscar").addEventListener("keyup",() =>{//Le pido que escuche cuando las teclas se dejen de apretar.
     let q = document.querySelector("#buscar").value; //Toma el valor de lo ingresado en la barra buscadora.
     
-    if(q.length >= 4){//Si q tiene un largo mayor a dos caracteres, inicia el método buscar, que toma q como parámetro.
+    if(q.length >= 2){//Si q tiene un largo mayor a dos caracteres, inicia el método buscar, que toma q como parámetro.
 
         gestor.buscar(q)
 

@@ -1,65 +1,20 @@
 //------SERIA MI BASE DE DATOS---------//
+
+
+
 class GestionProductos {
     iniciar() {
-        listaProductos = [
-            {
-                "id": 1,
-                "nombre": "Café Italiano",
-                "descripcion": "Café tipo italiano, robusto, intenso, 100% granos arábigos...",
-                "precio": 2400,
-                "stock": 10,
-                "img": "cafe-italiano.png",
-                "oferta": 1,
-            },
-            {
-                "id": 2,
-                "nombre": "Café Brasil",
-                "descripcion": "Café tipo brasil, robusto, intenso, 100% granos arábigos...",
-                "precio": 2400,
-                "stock": 5,
-                "img": "cafe-brasil.png",
-                "oferta": 0,
-            },
-            {
-                "id": 3,
-                "nombre": "Café Colombia",
-                "descripcion": "Café tipo colombia, robusto, intenso, 100% granos arábigos...",
-                "precio": 2400,
-                "stock": 0,
-                "img": "cafe-colombia.png",
-                "oferta": 0,
-            },
-            {
-                "id": 4,
-                "nombre": "Cafetera Filtro",
-                "descripcion": "Cafetera de filtro con capacidad para 0,6L.",
-                "precio": 6400,
-                "stock": 1,
-                "img": "cafetera-filtro.png",
-                "oferta": 0,
-            },
-            {
-                "id": 5,
-                "nombre": "Cafetera Italiana",
-                "descripcion": "Cafetera tipo italiana, capacidad 6 expressos",
-                "precio": 9400,
-                "stock": 1,
-                "img": "cafetera-italiana.png",
-                "oferta": 0,
-            },
-            {
-                "id": 6,
-                "nombre": "Jarro Pitcher",
-                "descripcion": "Jarro pitcher profesional, para hacer el mejor latte art!",
-                "precio": 8400,
-                "stock": 0,
-                "img": "jarro-pitcher.png",
-                "oferta": 0,
-            },
+            fetch(url)
 
-        ]
-        let productosStock = listaProductos.filter(prod => prod.stock >= 1);//Filtra productos con stock disponible.
-        this.cargarProductos(productosStock);
+            .then(resp => resp.json())
+            .then(result => {
+                listaProductos = result.listaProductos;
+
+                let productosStock = listaProductos.filter(prod => prod.stock >= 1);//Filtra productos con stock disponible.
+                this.cargarProductos(productosStock);
+            })
+            
+        
         /*let productosOferta = listaProductos.filter(prod => prod.oferta === 1);//Filtra productos en oferta
         this.cargarProductos(productosOferta);*/
     }
@@ -110,7 +65,7 @@ class GestionProductos {
 
     //--- Método para buscar el valor ingresado en la barra de búsqueda y arrojar el resultado apropiado ---//
     buscar(valor) {
-        let resultado = listaProductos.filter(producto => //mediante filter le pido que busque dentro de listaProductos productos en los cuales
+        let resultado = listaProductos.filter(producto => //mediante filter le pido que busque dentro de listaProductos productos en los cuales:
             producto.nombre.toLowerCase().includes(valor.toLowerCase()) || //el nombre incluya el valor pasado como parámetro
             producto.descripcion.toLowerCase().includes(valor.toLowerCase())//la descripción incluya el valor pasado como parámetro.
         );
@@ -212,9 +167,21 @@ class GestionProductos {
                         `;
         detalleCarrito.appendChild(rowTotal);
 
-
-
+        //En caso que haya algún elemento en el carrito, genera un botón de finalizar compra, que al ser clickeado redirige a finalizarCompra.html
+        let rowFinalizarCompra = "";
+        
+        if(carrito.length > 0){
+            let rowFinalizarCompra = document.createElement("DIV");
+            rowFinalizarCompra.classList.add("row");
+            rowFinalizarCompra.innerHTML = `
+                                <a href="./finalizarCompra.html" class="boton-agregar-carrito btn btn-primary">
+                                    Finalizar Compra
+                                </a>
+                            `;
+            detalleCarrito.appendChild(rowFinalizarCompra);
+            } 
     }
+
     //---Encargada de asociar el carrito al método que cuenta la cantidad de productos ---//
     actualizarContador(){
         let totalCarrito = this.contarProductos();//Declaro totalCarrito y le asigno el método encargado de entregar el total de productos.
@@ -256,10 +223,11 @@ class GestionProductos {
 
             Toastify({
                 text:"Has eliminado el producto",
-                duration: 150000,
+                duration: 3000,
                 gravity:"bottom",
-                ClassName:"toast-borrar-exito", //no me agrega la clase :( :(
+                
             }).showToast();
+            
         }
     }
     
