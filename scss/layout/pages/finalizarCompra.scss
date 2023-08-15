@@ -1,0 +1,43 @@
+main.contenedor-finalizar{
+    @include flex(column, none, center, center);
+    position: absolute;
+    width: 50%;
+    top:50%;
+    margin-top: -10%;
+    left: 50%;
+    margin-left: -30%;
+
+    h3{
+        text-align: center;
+    }
+    div.volver{
+        padding: 2rem 0;
+    }
+    div.contenedor{
+        @include flex(column, nowrap, center, center);
+        form{
+            @include flex(column,nowrap,none,flex-end);
+            padding: 1rem 0;
+            div.campo{
+                padding: 0.5rem 0;
+            }
+            div.submit {
+                input{
+                    @extend .boton-agregar-carrito;
+                }
+            }
+        }
+        div.contenedor-comprados-gracias{
+            @include flex(column,nowrap,none,flex-start);
+            div.comprados{
+                padding: 0.5rem 0;
+            }
+            div.mensaje-exito{
+                div{
+                    padding: 0.5rem 0;
+                }
+            }
+            
+        }
+    }
+}

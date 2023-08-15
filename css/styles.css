@@ -15,7 +15,7 @@
 
 /**Variables**/
 /**#botones**/
-.boton-agregar-carrito, main section div div.variedades div a.boton-agregar-carrito, main section div.contenedor-ver-productos div.variedades div a.boton-ver-productos, main section div.contenedor-ver-productos a.boton-ver-productos, main section div div.variedades div form input.boton-agregar-carrito {
+.boton-agregar-carrito, main.contenedor-finalizar div.contenedor form div.submit input, main section div div.variedades div a.boton-agregar-carrito, main section div.contenedor-ver-productos div.variedades div a.boton-ver-productos, main section div.contenedor-ver-productos a.boton-ver-productos, main section div div.variedades div form input.boton-agregar-carrito {
   border: 1px solid #886138;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
@@ -410,6 +410,57 @@ main div.offcanvas div.offcanvas-body div.contenedor-carrito div.row {
 main div.offcanvas div.offcanvas-body div.contenedor-carrito div.row div.total-carrito {
   border-bottom: 1px solid #6F1717 !important;
   font-weight: bold;
+}
+
+main.contenedor-finalizar {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  margin-top: -10%;
+  left: 50%;
+  margin-left: -30%;
+}
+main.contenedor-finalizar h3 {
+  text-align: center;
+}
+main.contenedor-finalizar div.volver {
+  padding: 2rem 0;
+}
+main.contenedor-finalizar div.contenedor {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+main.contenedor-finalizar div.contenedor form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: none;
+  align-items: flex-end;
+  padding: 1rem 0;
+}
+main.contenedor-finalizar div.contenedor form div.campo {
+  padding: 0.5rem 0;
+}
+main.contenedor-finalizar div.contenedor div.contenedor-comprados-gracias {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: none;
+  align-items: flex-start;
+}
+main.contenedor-finalizar div.contenedor div.contenedor-comprados-gracias div.comprados {
+  padding: 0.5rem 0;
+}
+main.contenedor-finalizar div.contenedor div.contenedor-comprados-gracias div.mensaje-exito div {
+  padding: 0.5rem 0;
 }
 
 /**^MEDIA-QUERIE-768**/

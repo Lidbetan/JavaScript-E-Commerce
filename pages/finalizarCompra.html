@@ -4,61 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locos por el Café - Finaliza tu compra!</title>
+    <!-- Sweet Alert 2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.17/sweetalert2.min.css"
+        integrity="sha512-CJ5goVzT/8VLx0FE2KJwDxA7C6gVMkIGKDx31a84D7P4V3lOVJlGUhC2mEqmMHOFotYv4O0nqAOD0sEzsaLMBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- Mi CSS -->
     <link href="../css/styles.css" rel="stylesheet">
 
 </head>
 <body>
-    <main class="contenedor">
+    <main class="contenedor-finalizar">
 
         <h3 class="centrar-texto">Ingrese los datos de su tarjeta</h3>
 
-        <div class="contacto-bg"></div>
+        <div class="contenedor">
 
-        <form class="formulario">
-            <div class="campo">
-                <label class="campo__label" for="numero">Número tarjeta</label>
-                <input 
-                    class="campo__field"
-                    type="number" 
-                    placeholder="0000 0000 0000 0000" 
-                    id="numero"
-                >
-            </div>
-            <div class="campo">
-                <label class="campo__label" for="nombre">Nombre titular</label>
-                <input 
-                    class="campo__field"
-                    type="text" 
-                    placeholder="Nombre como figura en la tarjeta" 
-                    id="nombre"
-                >
-            </div>
-            <div class="campo">
-                <label class="campo__label" for="vencimiento">Fecha Vencimiento</label>
-                <input 
-                    class="campo__field"
-                    type="text" 
-                    placeholder="MM/YY" 
-                    id="vencimiento"
-                >
-            </div>
-            <div class="campo">
-                <label class="campo__label" for="cvc">CVC</label>
-                <input 
-                    class="campo__field"
-                    type="number" 
-                    placeholder="CVC" 
-                    id="cvc"
-                >
-            </div>
+            <form class="formulario">
+                <div class="campo">
+                    <label class="campo__label" for="numero">Número tarjeta</label>
+                    <input 
+                        class="campo__field"
+                        type="number" 
+                        placeholder="0000 0000 0000 0000" 
+                        id="numero"
+                    >
+                </div>
+                <div class="campo">
+                    <label class="campo__label" for="nombre">Nombre titular</label>
+                    <input 
+                        class="campo__field"
+                        type="text" 
+                        placeholder="Nombre como figura en la tarjeta" 
+                        id="nombre"
+                    >
+                </div>
+                <div class="campo">
+                    <label class="campo__label" for="vencimiento">Fecha Vencimiento</label>
+                    <input 
+                        class="campo__field"
+                        type="text" 
+                        placeholder="MM/YY" 
+                        id="vencimiento"
+                        maxlength="5"
+                    >
+                </div>
+                <div class="campo">
+                    <label class="campo__label" for="cvc">CVC</label>
+                    <input 
+                        class="campo__field"
+                        type="tel" 
+                        placeholder="CVC" 
+                        id="cvc"
+                        maxlength="3"
+                    >
+                </div>
+     
+                <div class="submit">
+                    <input id="btn-enviar" type="submit" value="Enviar" class="boton boton--primario">
+                </div>
+            </form>
 
-            <div class="campo">
-                <input id="btn-enviar" type="submit" value="Enviar" class="boton boton--primario">
+            <div class="contenedor-comprados-gracias">
+    
             </div>
-        </form>
-        <div class="contenedor-mensaje-exito">
-
         </div>
+
 
         
     </main>

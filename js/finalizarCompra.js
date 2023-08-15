@@ -1,3 +1,4 @@
+
 //Traigo el carrito guardado en local storage
 carrito = JSON.parse( localStorage.getItem(key_carrito));
 //Creo el objeto datos, el cual contiene las propiedades y valores correspondientes a los datos a validar.
@@ -26,49 +27,53 @@ formulario.addEventListener("submit", function(e){
     const {numero, nombre, vencimiento, cvc} = datosTarjeta;
     if(numero === "" || nombre ==="" || vencimiento  ===""|| cvc ==="" ) {
         //Muesta el error:"Todos los campos son obligatorios"
-        alert("Todos los campos son obligatorios");
+        Swal.fire({
+            title:"Todos los campos son obligatorios",
+        })
         return;
     }else {
-        /*alert("Mensaje enviado con éxito");
-        console.log(carrito);*/
-        let contenedorMsj = document.querySelector(".contenedor-mensaje-exito");
+        //Arroja la lista de productos comprados, el precio, la cantidad, el total y un mensaje de agradecimiento.
+        let contenedorMsj = document.querySelector(".contenedor-comprados-gracias");
         contenedorMsj.innerHTML = "";
         let total = 0;
 
         carrito.forEach((producto) => {
             const { id, nombre, descripcion, precio, img, cantidad} = producto
 
-                const mensajeExito = document.createElement("DIV");
-                mensajeExito.classList.add("mensaje-exito");
+                const comprados = document.createElement("DIV");
+                comprados.classList.add("comprados");
                 total += parseInt(precio) * cantidad;
-                mensajeExito.innerHTML= `
+                comprados.innerHTML= `
                                         <div>
-                                            ${nombre}
+                                           <p> ${nombre} $${precio}  x${cantidad} </p>
                                         </div>
-                                        <div>
-                                            ${precio}
-                                        </div>
-                                        <div>
-                                            ${cantidad}
-                                        </div>
-
-
                                         `;
-                contenedorMsj.appendChild(mensajeExito);
+                contenedorMsj.appendChild(comprados);
                 });
 
-                const precioTotal = document.createElement("DIV");
-                precioTotal.classList.add("mensaje-exito");
-                precioTotal.innerHTML= `
+                const totalGracias = document.createElement("DIV");
+                totalGracias.classList.add("mensaje-exito");
+                totalGracias.innerHTML= `
                                         <div>
-                                            ${total}
+                                            <p>El total de su compra es: $${total}</p>
                                         </div>
                                         <div>
                                             <h3>Muchas gracias por su compra!</h3>
                                         </div>
 
                 `;
-                contenedorMsj.appendChild(precioTotal);
+                contenedorMsj.appendChild(totalGracias);
+
+                let contenedorVolver = document.querySelector(".contenedor-finalizar");
+                const volver = document.createElement("DIV");
+                //volver.setAttribute("href", "javascript:resetearCarrito()");
+                volver.classList.add("volver");
+                volver.innerHTML= `
+                                <a href="./carritoComprasJS.html" class="boton-agregar-carrito btn btn-primary">
+                                    Volver a la página principal
+                                </a>
+                `;
+                contenedorVolver.appendChild(volver);
 
     }
 })
@@ -77,6 +82,14 @@ function leerTexto(e){
     datosTarjeta[e.target.id] = e.target.value;
     console.log(datosTarjeta);
 }
+
+/*function resetearCarrito(){
+    if (carrito.lenght != 0){
+        carrito = [];
+        return carrito
+    }
+    localStorage.setItem(key_carrito, JSON.stringify( carrito ))
+}*/
 
 
 

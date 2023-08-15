@@ -28,7 +28,7 @@ class GestionProductos {
         if (listaProductos.lenght == 0) {
             this.mostrarMensaje("Actualmente no hay productos en stock");
             return false;
-            //--En caso contrario, se recorre el array con un forEach y ACA SE CREAN LAS CARD DE LOS PRODUCTOS--/
+            //--En caso contrario, se recorre el array con un forEach y ACA SE CREAN LAS CARTs DE LOS PRODUCTOS--/
         } else {
             listaProductos.forEach((prod) => {
 
