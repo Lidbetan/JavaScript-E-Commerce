@@ -14,9 +14,6 @@ class GestionProductos {
                 this.cargarProductos(productosStock);
             })
             
-        
-        /*let productosOferta = listaProductos.filter(prod => prod.oferta === 1);//Filtra productos en oferta
-        this.cargarProductos(productosOferta);*/
     }
 
     //---Se encarga de crear las cards de los productos y pushearlos dentro del HTML--//
@@ -80,7 +77,7 @@ class GestionProductos {
                 })
             }
 
-        } else {//Si no coincide lo buscado con algún producto indexado, arroja el siguiente mensaje -- FALTA TOASTIFY/SWA2
+        } else {//Si no coincide lo buscado con algún producto indexado, arroja el siguiente mensaje
             Swal.fire({
                 title:"No se encontró producto con ese nombre",
             })
@@ -128,23 +125,23 @@ class GestionProductos {
             total += parseInt(precio) * cantidad //sumaliza el precio por la cantidad de productos elegidos(del mismo tipo)
 
             row.innerHTML = `
-                            <div class="col-3 d-flex align-items-center p-2 border-bottom">
+                            <div class="col-2 d-flex align-items-center p-2">
                                 <img src="${img}" width="80"/>
                             </div>
 
-                            <div class="col-3 d-flex align-items-center p-2 border-bottom">
+                            <div class="col-2 d-flex align-items-center p-2">
                                 <p>${nombre}</p>
                             </div>
                             
-                            <div class="col-3 d-flex align-items-center justify-content-end p-2 border-bottom">
+                            <div class="col-2 d-flex align-items-center justify-content-end p-2">
                                 $${precio}  
                             </div>
                     
-                            <div class="col-3 d-flex align-items-center justify-content-end p-2 border-bottom">
+                            <div class="col-1 d-flex align-items-center justify-content-end p-2">
                                 ${cantidad}  
                             </div>
                             
-                            <div class="col-2 d-flex align-items-center justify-content-center p-2 border-bottom" id="eliminar-carrito">
+                            <div class="col-2 d-flex align-items-center justify-content-center p-2" id="eliminar-carrito">
                                 <a href="javascript:eliminarCarrito(${id})">
                                     <i class="fa-solid fa-square-minus fa-2x"></i>
                                 </a>
@@ -152,7 +149,7 @@ class GestionProductos {
                             `;
             detalleCarrito.appendChild(row);
         });
-
+        //--Agrega una row con el precio total a pagar
         let rowTotal = document.createElement("DIV");
         rowTotal.classList.add("row");
         rowTotal.innerHTML = `
@@ -168,7 +165,6 @@ class GestionProductos {
         detalleCarrito.appendChild(rowTotal);
 
         //En caso que haya algún elemento en el carrito, genera un botón de finalizar compra, que al ser clickeado redirige a finalizarCompra.html
-        let rowFinalizarCompra = "";
         
         if(carrito.length > 0){
             let rowFinalizarCompra = document.createElement("DIV");
@@ -184,7 +180,7 @@ class GestionProductos {
 
     //---Encargada de asociar el carrito al método que cuenta la cantidad de productos ---//
     actualizarContador(){
-        let totalCarrito = this.contarProductos();//Declaro totalCarrito y le asigno el método encargado de entregar el total de productos.
+        let totalCarrito = this.contarProductos();//Declaro totalCarrito y le asigno el método encargado de contabilizar el total de productos.
 
         let contadorCarrito = document.querySelector("#badgeCarrito");//Crea la componente asociada al elemento con ID #badgeCarrito.
         contadorCarrito.innerHTML = totalCarrito; //Actualizo su contenido con el valor de totalCarrito

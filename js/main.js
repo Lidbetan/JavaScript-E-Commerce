@@ -3,7 +3,7 @@ let carrito = [];
 let listaProductos = new Array();
 
 let gestor;
-const key_carrito = "productosCarrito";
+let key_carrito = "productosCarrito";
 const url = "../js/bd.json";
 
 
@@ -38,7 +38,7 @@ function addCarrito(id){
     //declaro la variable y creo la componente llamando al id(#row_) y concatenando el ID que yo le doy como parámetro.
     const prod_carrito = document.querySelector("#row_"+id);
 
-    //genero las variables que vana darle titulo, precio e imagen al cart que voy a agregar al carrito
+    //genero las variables que van a darle titulo, precio e imagen al cart que voy a agregar al carrito
     let nombre = prod_carrito.querySelector("h3").textContent;//obtengo el contenido de texto del elemento.
     let precio = prod_carrito.querySelector(".precio").textContent.substring(1,prod_carrito.querySelector(".precio").textContent.length);
     /*con el método substring incluyo el texto desde el [1] hasta todo el largo del contenido, obviando de esta forma el símbolo $

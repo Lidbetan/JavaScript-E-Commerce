@@ -1,4 +1,4 @@
-
+key_carrito = "productosCarrito";
 //Traigo el carrito guardado en local storage
 carrito = JSON.parse( localStorage.getItem(key_carrito));
 //Creo el objeto datos, el cual contiene las propiedades y valores correspondientes a los datos a validar.
@@ -14,7 +14,8 @@ const nombreInput = document.querySelector("#nombre");
 const vencimientoInput = document.querySelector("#vencimiento");
 const cvcInput = document.querySelector("#cvc");
 const formulario = document.querySelector(".formulario");
-//Escucho los eventos tipo input y lo manejo asignando su valor al elemento correspondiente
+
+//Escucho los eventos tipo input y lo manejo asignando su valor al elemento correspondiente.
 numInput.addEventListener("input", leerTexto);
 nombreInput.addEventListener("input", leerTexto);
 vencimientoInput.addEventListener("input", leerTexto);
@@ -22,7 +23,7 @@ cvcInput.addEventListener("input", leerTexto);
 
 //Evento submit
 formulario.addEventListener("submit", function(e){
-    e.preventDefault(); //evito que realice la acción por default, que es enviar el form.
+    e.preventDefault();
     //Valido el formulario
     const {numero, nombre, vencimiento, cvc} = datosTarjeta;
     if(numero === "" || nombre ==="" || vencimiento  ===""|| cvc ==="" ) {
@@ -64,9 +65,12 @@ formulario.addEventListener("submit", function(e){
                 `;
                 contenedorMsj.appendChild(totalGracias);
 
+                //--Una vez finalizada la compra, se procede a vaciar el carrito llamando al siguiente método--//
+                resetearCarrito();
+
+                //--Luego, con este boton se vuelve al index.html--//
                 let contenedorVolver = document.querySelector(".contenedor-finalizar");
                 const volver = document.createElement("DIV");
-                //volver.setAttribute("href", "javascript:resetearCarrito()");
                 volver.classList.add("volver");
                 volver.innerHTML= `
                                 <a href="./carritoComprasJS.html" class="boton-agregar-carrito btn btn-primary">
@@ -77,29 +81,14 @@ formulario.addEventListener("submit", function(e){
 
     }
 })
-
+//Esta función pasada como argumento de manejo de evento, permite asignar al objeto datosTarjeta el valor ingresado por el usuario en el input.
 function leerTexto(e){
     datosTarjeta[e.target.id] = e.target.value;
-    console.log(datosTarjeta);
+    //console.log(datosTarjeta);
 }
 
-/*function resetearCarrito(){
-    if (carrito.lenght != 0){
+//Esta función vacía el carrito una vez arrojado el mensaje final los items e importe final.
+function resetearCarrito(){
         carrito = [];
-        return carrito
-    }
-    localStorage.setItem(key_carrito, JSON.stringify( carrito ))
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
+        localStorage.setItem(key_carrito, JSON.stringify( carrito ))
+}

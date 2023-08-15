@@ -1,7 +1,8 @@
 /**^boton-carrito**/
 main {
     section {
-        div {//Estilo boton agregar producto al carrito
+        //--Estilo boton de agregar producto al carrito--//
+        div {
             div.variedades {
                 div {
                     form {
@@ -12,7 +13,8 @@ main {
                 }
             }
         }
-        div.offcanvas{//Estilo boton de eliminar producto del carrito
+        //--Estilo boton de eliminar producto del carrito--//
+        div.offcanvas{
             div.offcanvas-body{
                 div.contenedor-carrito{
                     div.row{
@@ -31,7 +33,7 @@ main {
     }
 }
 
-/**^boton-ver-productos**///SIN-USO-ACTUAL
+/**^boton-ver-productos**/
 main {
     section {
         div.contenedor-ver-productos {

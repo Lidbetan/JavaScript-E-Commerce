@@ -43,7 +43,10 @@ header {
 
             div.carrito-compras {
                 a {
-                    i {
+                    i.icono-carrito {
+                        color:$granate;
+                        
+                        
                         font-size: 2.5rem;
                         span#badgeCarrito {
                             display: flex;
