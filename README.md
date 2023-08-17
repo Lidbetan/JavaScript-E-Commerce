@@ -38,4 +38,4 @@ El *Footer*  cuenta con enlaces que redirigen a las redes sociales (Facebook e I
 
 ~~Actualmente se está comenzando a implementar JavaScript para crer un carrito de compras.~~
 
-Se implementó Javascript para crear una serie de menúes que actúen como medio de control de los productos para el **Administrador**, ya sea para agregar/quitar productos al stock, controlar el mismo y agregar descuentos y otro para que sea el carrito de compras del **Usuario**.
+~~Se implementó Javascript para crear una serie de menúes que actúen como medio de control de los productos para el **Administrador**, ya sea para agregar/quitar productos al stock, controlar el mismo y agregar descuentos y otro para que sea el carrito de compras del **Usuario**.~~

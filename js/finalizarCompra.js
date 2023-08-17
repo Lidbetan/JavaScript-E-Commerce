@@ -33,7 +33,42 @@ formulario.addEventListener("submit", function(e){
         })
         return;
     }else {
-        //Arroja la lista de productos comprados, el precio, la cantidad, el total y un mensaje de agradecimiento.
+        //llama al método validados(), que arroja un mensaje que simula validar los datos de la tarjeta y requiere resolver la promise antes de arrojar la lista de artículos comprados.
+        validados();
+    }
+})
+//Esta función pasada como argumento de manejo de evento, permite asignar al objeto datosTarjeta el valor ingresado por el usuario en el input.
+function leerTexto(e){
+    datosTarjeta[e.target.id] = e.target.value;
+    //console.log(datosTarjeta);
+}
+
+//Esta función vacía el carrito una vez arrojado el mensaje final los items e importe final.
+function resetearCarrito(){
+        carrito = [];
+        localStorage.setItem(key_carrito, JSON.stringify( carrito ))
+}
+
+//Simula validar los datos de la tarjeta, arrojando un mensaje de verificación de datos y otro de confirmación luego de 2 segundos.
+function validarTarjeta(){
+    return new Promise( resolve=>{
+        //verificacion
+        Swal.fire({
+            title:"Verificando los datos ingresados",
+        });
+        console.log("validando los datos ingresados, espere por favor...");
+        //confirmación
+        setTimeout(()=>{
+            resolve("Datos verificados correctamente")
+        },2000)
+    })
+};
+
+async function validados(){
+    try{
+        const resultado = await validarTarjeta();
+    /*Luego que se resuelve validarTarjeta(), se ejecuta el siguiente código:
+        Arroja la lista de productos comprados, el precio, la cantidad, el total y un mensaje de agradecimiento.*/ 
         let contenedorMsj = document.querySelector(".contenedor-comprados-gracias");
         contenedorMsj.innerHTML = "";
         let total = 0;
@@ -78,17 +113,11 @@ formulario.addEventListener("submit", function(e){
                                 </a>
                 `;
                 contenedorVolver.appendChild(volver);
-
+        Swal.fire({
+            title:"",
+            text:resultado,
+        })
+    }catch(error) {
+        console.log(error)
     }
-})
-//Esta función pasada como argumento de manejo de evento, permite asignar al objeto datosTarjeta el valor ingresado por el usuario en el input.
-function leerTexto(e){
-    datosTarjeta[e.target.id] = e.target.value;
-    //console.log(datosTarjeta);
-}
-
-//Esta función vacía el carrito una vez arrojado el mensaje final los items e importe final.
-function resetearCarrito(){
-        carrito = [];
-        localStorage.setItem(key_carrito, JSON.stringify( carrito ))
 }
